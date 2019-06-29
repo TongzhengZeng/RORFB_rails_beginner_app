@@ -9,6 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navigation/navbar' %>
+  	<div class='container'>
+      <%= bootstrap_flash %>
+  		<%= yield %>
+  	</div>
+   
   </body>
 </html>
