@@ -11,8 +11,14 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
+	Comments:
+</p>
+
+<%= render @post.comments %>
+
+<p>
+  <strong>Add Comment</strong>
+  <%= render 'comments/form' %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

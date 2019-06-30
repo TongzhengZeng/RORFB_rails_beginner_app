@@ -1,0 +1,5 @@
+<p><%= comment.user.username %> | <%= comment.body %></p>
+
+<%= link_to 'Edit Comment', edit_post_comment_path(comment.post, comment), class: 'btn btn-outline-info btn-sm' %>
+
+<%= link_to 'Delete Comment', [comment.post, comment], method: :delete, data: {confirm: "This can not be undone!"}, class: 'btn btn-danger btn-sm' %>
