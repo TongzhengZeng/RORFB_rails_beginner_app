@@ -22,6 +22,8 @@ gem 'simple_form', '~> 4.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'bootstrap-sass-extras'
 gem 'faker', '~> 1.9', '>= 1.9.4'
+gem 'sidekiq'
+gem 'redis'
 
 
 

@@ -38,7 +38,16 @@ web.main:
   # the path to a logfile you want streamed to the nanobox dashboard
   log_watch:
     rails: 'log/production.log'
+    sidekiq: 'sidekiq.log'
 
 # add a worker component and give it a "start" command
-# worker.main:
-#   start: sidekiq
+worker.main:
+  start: bundle exec sidekiq -q default -q mailers -C /my-website/config/sidekiq.rb 
+
+data.redis:
+  image: nanobox/redis:3.0
+
+# optional redis configs
+  config:
+    tcp_keepalive: 60
+    databases: 16
