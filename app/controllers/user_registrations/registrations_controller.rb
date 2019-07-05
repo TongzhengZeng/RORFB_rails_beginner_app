@@ -9,7 +9,8 @@ class UserRegistrations::RegistrationsController < Devise::RegistrationsControll
 			:password_confirmation,
 			:first_name,
 			:last_name,
-			:username)
+			:username,
+			:image)
 	end
 
 	def account_update_params
@@ -20,7 +21,8 @@ class UserRegistrations::RegistrationsController < Devise::RegistrationsControll
 			:password_confirmation,
 			:first_name,
 			:last_name,
-			:username)
+			:username,
+			:image)
 	end
 
 end

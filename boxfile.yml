@@ -6,6 +6,7 @@ run.config:
   extra_packages:
     - nodejs
     - nginx
+    - ImageMagick
 
   build_triggers:
     - Gemfile
@@ -42,7 +43,7 @@ web.main:
 
 # add a worker component and give it a "start" command
 worker.main:
-  start: bundle exec sidekiq -q default -q mailers -C /my-website/config/sidekiq.rb 
+  start: bundle exec sidekiq -q default -q mailers -C /app/config/sidekiq.rb 
 
 data.redis:
   image: nanobox/redis:3.0

@@ -19,6 +19,14 @@
     <%= f.input :username,
                 required: true, 
                 label: "User name" %>
+    <label>Upload a photo</label>
+    <%= f.input :image, as: :file, label: false %>
+
+    <% if @user.image.present? %>
+    <%= image_tag @user.image_url(:thumb) %>
+    <% else %>
+    <%= image_tag 'no_image' %>
+    <% end %>
 
 
     <%= f.input :password,
