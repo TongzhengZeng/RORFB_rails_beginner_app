@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsApp</title>
+    <title><%= @app_setting.tab_name %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' if @app_setting.tab_name == 'default' %>
+
+    <%= stylesheet_link_tag  'cerulean/theme_manifest', media: 'all', 'data-turbolinks-track': 'reload' if @app_setting.tab_name == 'cerulean' %>
+
+    <%= stylesheet_link_tag  'darkly/theme_manifest', media: 'all', 'data-turbolinks-track': 'reload' if @app_setting.tab_name == 'darkly' %>
+
+    <%= stylesheet_link_tag  'solar/theme_manifest', media: 'all', 'data-turbolinks-track': 'reload' if @app_setting.tab_name == 'solar' %>
+
+    <%= stylesheet_link_tag  'yeti/theme_manifest', media: 'all', 'data-turbolinks-track': 'reload' if @app_setting.tab_name == 'yeti' %>
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'layouts/navigation/navbar' %>
+    <%= render 'layouts/navigation_bootswatch/navbar' %>
   	<div class='container'>
       <%= bootstrap_flash %>
   		<%= yield %>

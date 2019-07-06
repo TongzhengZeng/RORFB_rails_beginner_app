@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  resources :app_settings
   devise_for :users, controllers: { registrations: 
   	'user_registrations/registrations'}
   resources :template_ones

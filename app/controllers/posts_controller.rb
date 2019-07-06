@@ -4,6 +4,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+
+  layout 'yeti'
+
   def index
     @posts = Post.all
   end
