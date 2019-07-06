@@ -4,6 +4,10 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+
+
+  layout 'solar'
+  
   def index
     @posts = Post.all
   end
